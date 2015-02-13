@@ -3,9 +3,9 @@
 		var settings = $.extend({
 			'videoId'  : null, 
 			'poster'   : null,
-            'autoplay' : true,
-            'loop'     : true,
-            'muted'    : true
+			'autoplay' : true,
+			'loop'     : true,
+			'muted'    : true
 		}, options);
 
 		var ykbg  = this;
@@ -13,10 +13,11 @@
 
 
 		ykbg.play = function(link){
-            var autoplay = (settings.autoplay) ? ' autoplay' : '';
+			var autoplay = (settings.autoplay) ? ' autoplay' : '';
             var loop     = (settings.loop) ? ' loop' : '';
             var muted    = (settings.muted) ? ' muted' : '';
-			_this.html('<video'+ autoplay + loop + muted +' poster="' + settings.poster + '" id="bgvid">'
+            var poster   = (settings.poster != null) ? 'poster="' + settings.poster + '"' : '';
+			_this.html('<video'+ autoplay + loop + muted + poster + ' id="bgvid">'
 						+ '<source src="' + link + '" type="video/mp4">'
 						+ '</video>');
 		};
