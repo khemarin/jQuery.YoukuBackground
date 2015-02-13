@@ -1,0 +1,23 @@
+video { display: block; }
+video#bgvid {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	background: url('http://placehold.it/640x300') no-repeat;
+	background-size: cover;
+}
+
+/**
+* Most mobile platforms (iOS in particular) will refuse to autoplay HTML5 video to avoid potentially ruinous data charges.
+*/
+@media screen and (max-device-width: 800px) {
+	video#bgvid{
+		background: url('http://placehold.it/320x150') no-repeat;
+		background-size: cover;
+	}
+}
